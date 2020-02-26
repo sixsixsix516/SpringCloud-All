@@ -1,0 +1,33 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka-server
+
+  #配置SpringSecurity登录用户名和密码
+  security:
+    user:
+      name: sixsixsix516
+      password: 123456
+
+eureka:
+  instance:
+    #指定主机地址
+    hostname: localhost
+  client:
+    #指定是否要从注册中心获取服务（注册中心不需要开启）
+    fetch-registry: false
+    #指定是否要注册到注册中心（注册中心不需要开启）
+    register-with-eureka: false
+  server:
+    #关闭保护模式
+    enable-self-preservation: false
+
+
+# 注册中心集群方法
+#eureka:
+#  client:
+#    serviceUrl:
+#  注册中心之间互相注册即可
+#      defaultZone: http://replica2:8003/eureka/
+#      defaultZone: http://name:password@replica2:8003/eureka/
